@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #020617;
+    color: #f8fafc;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom HUD & Cybernetic Utilities */
+.bg-cyber-grid {
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.8) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(15, 23, 42, 0.8) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+}
+
+.scanline {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(6, 182, 212, 0.08) 50%,
+    rgba(6, 182, 212, 0.08)
+  );
+  background-size: 100% 4px;
+}
+
+.hud-glow {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.15), inset 0 0 15px rgba(6, 182, 212, 0.08);
+}
+
+.hud-glow-orange {
+  box-shadow: 0 0 25px rgba(249, 115, 22, 0.15), inset 0 0 15px rgba(249, 115, 22, 0.08);
+}
+
+/* Custom Scrollbar for sleek experience */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+@keyframes pulse-radar {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+}
+
+.animate-radar {
+  animation: pulse-radar 3s infinite ease-in-out;
+}
+
